@@ -21,14 +21,36 @@ var family = {
     members: [person, person2]   //Array of objects, don't forget to add Jimmy
 };
 
+person.lucky_numbers[3] = 33;
+
+var person3= Object.assign({},person);
+person3.name = "Jimmy";
+person3.lastname = "Doe";
+person3.age = 13;
+person3.gender = "male";
+person3.lucky_numbers = [1,2,3,4];
+person3.significant_other = null;
+
+family.members.push(person3);
+
+
 
 function addAllFamilyLuckyNumbers(anArray){
   var sumOfAllLuckyNumbers = 0; //sumOfAllLuckyNumbers is a number, the sum of all lucky numbers.
+  var newArray=[];
+    for (let i = 0; i < anArray.length ; i++) {
+        console.log(anArray[i]);
+        for(let j=0; j <anArray[i].length ; j++)
+        if(anArray[i][j]===anArray[i].lucky_numbers){
+            console.log(anArray[i][j]);
+        }
+        
+    }
 
   //To-Do: loop and add; consider nested loops
   //Hint: use the anArray variable to get all of the lucky numbers
   
-  return sumOfAllLuckyNumbers;
+  console.log(newArray);
 }
 
 //Enter all your code here:
